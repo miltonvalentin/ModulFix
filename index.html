@@ -106,6 +106,14 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    /* MISMO FONDO EN TODAS */
+    background:
+        radial-gradient(circle at top, rgba(0,113,227,0.25), transparent 60%),
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+        url("fondo.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .section.active {
@@ -117,14 +125,14 @@ nav a:hover {
 /* HERO */
 .hero {
     background:
-        radial-gradient(circle at top, rgba(0,113,227,0.25), transparent 60%),
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+        radial-gradient(circle at top, rgba(0,113,227,0.35), transparent 60%),
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
         url("fondo.jpg");
     background-size: cover;
     background-position: center;
 }
 
-/* 🔥 LOGO PRINCIPAL MÁS GRANDE (AQUÍ ESTÁ EL CAMBIO) */
+/* LOGO PRINCIPAL */
 .hero img {
     width: clamp(200px, 25vw, 420px);
     margin-bottom: 20px;
@@ -191,6 +199,49 @@ nav a:hover {
     border-radius: 25px;
     max-width: 450px;
     width: 90%;
+}
+
+/* GALERÍA */
+.gallery {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    max-width: 600px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(0,113,227,0.3);
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #0071e3;
+}
+
+/* 🔥 STATS */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.stats div {
+    background: rgba(17,17,17,0.8);
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(0,113,227,0.3);
+}
+
+.stats h3 {
+    color: #4dbfff;
 }
 
 /* FOOTER */
@@ -260,10 +311,25 @@ footer {
 <section id="sobre" class="section">
     <div>
         <h1>Sobre ModulFix</h1>
+
         <p style="max-width:600px; color:#d1d1d6;">
-            En ModulFix arreglamos celulares porque sabemos lo importante que es tener el tuyo funcionando. Hacemos reparaciones de pantalla, batería, carga y más, siempre con buena atención y buscando que quedes conforme.
+            En ModulFix contamos con más de <b>un año de experiencia</b> en reparación de celulares.
+            Nos especializamos en cambio de módulos, baterías, pines de carga, cámaras y más.
         </p>
+
+        <p style="max-width:600px; color:#d1d1d6; margin-top:10px;">
+            Trabajo con responsabilidad y atención directa para que tu equipo vuelva a funcionar como nuevo.
+            Cada reparación se realiza con cuidado, como si fuera nuestro propio dispositivo.
+        </p>
+
+        <!-- STATS -->
+        <div class="stats">
+            <div><h3>+1 año</h3><p>Experiencia</p></div>
+            <div><h3>Muchos</h3><p>Equipos reparados</p></div>
+            <div><h3>Segura</h3><p>Reparación</p></div>
+        </div>
     </div>
+
 </section>
 
 <section id="contacto" class="section">
